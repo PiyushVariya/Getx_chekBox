@@ -17,7 +17,99 @@ Future<void> main() async {
     ),
   );
 }
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    
+/*class Demo extends StatefulWidget {
+  Demo({
+    Key? key,
+  }) : super(key: key);
 
+  @override
+  _DemoState createState() => _DemoState();
+}
+
+class _DemoState extends State<Demo> {
+  File? file;
+  late PdfViewerController _pdfViewerController;
+  final GlobalKey<SfPdfViewerState> _pdfViewerStateKey = GlobalKey();
+
+  Uint8List? byte;
+
+  @override
+  void initState() {
+    _pdfViewerController = PdfViewerController();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: Scaffold(
+      body: byte == null
+          ? Container()
+          : SfPdfViewer.memory(byte!,
+              controller: _pdfViewerController, key: _pdfViewerStateKey),
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () async {
+              final result = await FilePicker.platform.pickFiles(
+                type: FileType.custom,
+                allowedExtensions: [
+                  'jpg',
+                  'pdf',
+                  'doc',
+                  'docx',
+                  'xls',
+                  'xlsx',
+                  'txt'
+                ],
+                allowMultiple: false,
+              );
+
+              if (result == null) return;
+              var path = result.files.single.bytes;
+              byte = path;
+
+              setState(() {});
+              // setState(() => file = File(path));
+
+              // createExcel();
+              print('++++++++ $file');
+              print('>>>>>>>>>>>>>> $path');
+            },
+            icon: Icon(Icons.add)),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                _pdfViewerStateKey.currentState!.openBookmarkView();
+              },
+              icon: const Icon(
+                Icons.bookmark,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {
+                _pdfViewerController.jumpToPage(5);
+              },
+              icon: const Icon(
+                Icons.arrow_drop_down_circle,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {
+                _pdfViewerController.zoomLevel = 1.25;
+              },
+              icon: const Icon(
+                Icons.zoom_in,
+                color: Colors.white,
+              ))
+        ],
+      ),
+    ));
+  }
+}*/
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ////////////////////////////////////////////////////////
 /*
